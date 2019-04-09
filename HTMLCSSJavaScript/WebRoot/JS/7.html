@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#div{background-color:red; height:300;width:300;}
+</style>
+</head>
+<body>
+	<div id="div"></div>
+</body>
+
+<script type="text/javascript">
+	//onmouseover事件和onmouseout事件
+	var div=document.getElementById("div");
+	div.onmouseover=function(){
+		div.style.backgroundColor="blue";
+	};
+	div.onmouseout=function(){
+		div.style.backgroundColor="red";
+	};
+</script>
+</html>

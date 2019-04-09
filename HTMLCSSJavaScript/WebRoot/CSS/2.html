@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- class选择器 -->
+<style type="text/css">
+	.div{color:orange;font-size: 100 }
+</style>
+
+<!-- 伪元素选择器 -->
+<style type="text/css">
+	a{font-size: 50}
+	a:LINK {color: blue;}
+	a:HOVER {color:black;}
+	a:ACTIVE {color:fuchsia;}
+	a:VISITED {color:red;}
+</style>
+
+<!-- 层级选择器 -->
+<style type="text/css">
+	#d1 .dd1 span{color:blue;}
+</style>
+
+</head>
+<body>
+	<div class="div">hello css!</div>
+	<div class="div">hello html</div>
+	<div class="cla">hello js</div>
+	<hr/>
+	<a href="#">点我看看！</a>
+	<hr/>
+	<hr/>
+	<div id="d1">
+		<div class="dd1">
+			<span>1-1</span>
+		</div>
+		<div id="dd2">
+			<span>1-2</span>
+		</div>
+	</div>
+	<div id="d2">
+		<div class="dd1">
+			<span>2-1</span>
+		</div>
+		<div id="dd2">
+			<span>2-2</span>
+		</div>
+	</div>
+	
+</body>
+</html>

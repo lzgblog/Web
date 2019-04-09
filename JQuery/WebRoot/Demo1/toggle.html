@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		text-align:center;
+		margin: auto;
+		width:100;
+		height:80;
+	}
+</style>
+<script type="text/javascript" src="D:\MyEclipseProfessional2014\JQuery\WebRoot\Demo1\jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#in").click(function(){
+			$("img").toggle();//切换显示或隐藏
+		});
+	});
+</script>
+</head>
+<body>
+<div>
+	<input type="button" value="隐藏/显示" id="in"><br>
+	<img src="22.jpg">
+	</div>
+</body>
+</html>

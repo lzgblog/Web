@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="D:\MyEclipseProfessional2014\JQuery\WebRoot\Demo1\jquery-1.8.3.js"></script>
+<script type="text/javascript">
+//传统js
+	function on(){
+		var span=document.getElementById("span");
+		span.innerHTML="js";
+		//$(span).html("javascript");
+	}
+	$(function(){
+		//通过id获取标签  并绑定点击事件
+		$("#but").click(function(){
+			$("#span").html("jquery");
+			//或者
+			//$("#span")[0].innerHTML="jq";
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="js按钮" onclick="on()"><br>
+	<input type="button" value="jq按钮" id="but"><br>
+	<span id="span">666</span>
+</body>
+</html>

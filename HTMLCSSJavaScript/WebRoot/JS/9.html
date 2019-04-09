@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	账号：<input id="in" type="text" value="请输入账号"/><span id="span"></span>
+
+</body>
+<script type="text/javascript">
+	//onfocus 和 onblur  焦点事件  比如友好提示与错误提示
+	//innerHTML 是添加    style就算在标签中没有 也可以通过获取
+	var text=document.getElementById("in");
+	//当获得焦点时    即出现光标时
+	text.onfocus = function(){
+		var span=document.getElementById("span");
+		span.innerHTML="账号为10位数字";
+		span.style.color="blue";
+	}
+	//当失去焦点时  
+	text.onblur = function(){
+		var span=document.getElementById("span");
+		span.innerHTML="账号错误";
+		span.style.color="red";
+	}
+</script>
+
+</html>

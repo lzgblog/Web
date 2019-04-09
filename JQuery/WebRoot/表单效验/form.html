@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 首先导入jquery类库 -->
+<script type="text/javascript" src="D:\MyEclipseProfessional2014\JQuery\WebRoot\表单效验\jquery-1.8.3.js"></script>
+<!-- 再导入validate规范 -->
+<script type="text/javascript" src="D:\MyEclipseProfessional2014\JQuery\WebRoot\表单效验\jquery.validate.min.js"></script>
+<!-- 最后导入国际化 -->
+<script type="text/javascript" src="D:\MyEclipseProfessional2014\JQuery\WebRoot\表单效验\messages_zh.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#form").validate({
+				rules:{
+					username:{
+						required:true,
+						minlength:2
+					},
+					password:{
+						required:true,
+						minlength:6,
+						digits:true
+					},
+					repassword:{
+						required:true,
+						equalTo:"[name='password']"
+					},
+					email:{
+						required:true,
+						email:true
+					}
+				},
+				messages:{
+					username:{
+						required:"用户名不能为空 ",
+						minlength:"用户名长度不少于2位数"
+					},
+					password:{
+						required:"密码不能为空",
+						minlength:"密码长度不少于6位",
+						digits:"密码必须是数字"
+					},
+					repassword:{
+						required:"重复密码不能为空",
+						equalTo:"两次密码不一致"
+					},
+					email:{
+						required:"邮箱不能为空",
+						email:"邮箱格式不正确"
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<form action="#" id="form">
+	<label for="user">用户名：</label>
+	<input type="text" name="username" id="user"><br>
+	<label for="pass">密码：</label>
+	<input type="password" name="password" id="pass"><br>
+	重复密码：<input type="password" name="repassword"><br>
+	邮箱：<input type="text" name="email"><br />
+	<input type="submit" value="提交">
+	</form>
+</body>
+</html>

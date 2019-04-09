@@ -1,0 +1,70 @@
+
+	1、文字属性
+		font-size:大小
+		font-family:字体类型		
+	2、文本属性
+		color:颜色
+		text-decoration:下划线
+			属性值：none	underline	
+		text-align:对齐方式
+			属性值：left  center  right
+			<div>hello css!!!</div>
+			<a href="#">click me!!!</a>
+			<style type="text/css">
+				div{color:red;text-decoration: underline;text-align: right }
+				a{text-decoration: none;}
+			</style>
+	3、背景属性
+		background-color:背景颜色
+		background-image:背景图片
+			属性值：url("图片地址");
+		background-repeat:平铺方式
+			属性值：默认横向纵向平铺
+					repeat:横向纵向平铺
+					no-repeat:不平铺
+					repeat-y：纵向
+					repeat-x：横向
+		
+		body{
+			background-color: black;
+			background-image: url("images/dog.gif");
+			background-repeat: repeat-y;
+		}
+	
+	4、列表属性
+		list-style-type:列表项前的小标志
+			属性值：太多了
+		list-style-image:列表项前的小图片
+			属性值：url("图片地址");
+			
+			<ul>
+				<li>黑马程序员</li>
+				<li>黑马程序员</li>
+				<li>黑马程序员</li>
+				<li>黑马程序员</li>
+			</ul>
+			<style type="text/css">
+				/* ul{list-style-type: decimal-leading-zero;} */
+				ul{list-style-image: url("images/forward.gif");}
+			</style>
+	
+	5、尺寸属性	
+		width:宽度
+		height:高度
+			<div id="d1">div1</div>
+			<div id="d2">div2</div>
+			<style type="text/css">
+				#d1{background-color: red;width: 200px;height: 200px;}
+				#d2{background-color: pink;width: 200px;height: 200px;}
+			</style>
+	6、显示属性
+		display:
+			属性值：none:隐藏
+					block:块级显示
+					inline：行级显示
+			7、浮动属性
+		float:
+			属性值：left  right
+					clear:清除浮动 left right both
+			缺点：	(1)影响相邻元素不能正常显示
+					(2)影响父元素不能正常显示

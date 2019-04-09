@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="7.html" onclick="fn(event)">点这里</a> 
+<!-- 	<a href="7.html" onclick="return false">点这里</a> -->
+</body>
+
+<script type="text/javascript">
+//阻止事件的隐藏行为
+	function fn(e){
+		if(e&&e.preventDefault){
+		//IE：window.event.returnValue = false;
+		//W3c: 传递过来的事件对象.preventDefault();
+		//ie：window.event.returnValue = false;
+		//W3c：传递过来的事件对象.preventDefault();
+		//W3c标准
+			alert("w3c");
+			e.preventDefault();
+		//IE标签
+		}else{
+			alert("ie");
+			window.event.returnValue = false;
+		}
+		
+	} 
+	/* 
+	4、阻止事件的传播
+		IE：window.event.cancelBubble = true;
+		W3c: 传递过来的事件对象.stopPropagation();
+		if(e&&e.stopPropagation){
+			alert("w3c");
+			e.stopPropagation();
+		//IE标签
+		}else{
+			alert("ie");
+			window.event.cancelBubble = true;
+		}	
+	
+	 */
+</script>
+</html>

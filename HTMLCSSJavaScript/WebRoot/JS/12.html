@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input id="input" name="name" type="text" value="bj">
+	<h1 id="h">北京</h1>
+	
+</body>
+ <script type="text/javascript" >
+ 	var ing=document.getElementById("input");
+ 	var t=ing.getAttribute("type");
+ 	alert(ing.type);
+ 	var h=document.getElementById("h");
+ 	/* var first=h.firstChild;
+ 	alert(first.nodeValue);
+ 	alert(first.nodeType); */
+ 	//获取所有子节点   h下只有一个文本节点
+ 	var c=h.childNodes;
+ 	for(i=0;i<c.length;i++){
+ 		alert(c[i].nodeValue);//北京
+ 		alert(c[i].nodeType);//3
+ 		alert(c[i].nodeName);//#text
+ 	}
+ </script>
+
+</html>

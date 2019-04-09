@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- //方式三： -->
+	<input id="method" type="button"  name="button" value="点击" />
+
+<!-- 事件绑定方式 -->
+<script type="text/javascript">
+	/* function method(){
+		alert("方式二");
+	} */
+	/* // 方式三必须把<input id="method" type="button"  name="button" value="点击" />放在前面 
+	 var method=document.getElementById("method");
+	method.onclick = function(){
+		alert("方式三");
+	}  */
+	
+	function method(obj){
+		alert(obj.name);
+	}
+		
+</script>
+	<!-- 方式一： -->
+	<!-- <input type="button"  name="button" value="点击" onclick="alert('方式一')"/> -->
+
+	<!-- //方式二
+	<input type="button"  name="button" value="点击" onclick="method()"> -->
+	
+	<!-- this 关键字  此时表示标签对象 -->
+	<input type="button"  name="button" value="点击" onclick="method(this)"/>
+	
+</body>
+</html>

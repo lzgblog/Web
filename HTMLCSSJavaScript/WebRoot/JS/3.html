@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- js函数 -->
+<script type="text/javascript">
+	//普通方式
+	/* function method(){
+		alert("xxx");
+	}
+	 method(); */
+	 
+	/*//匿名方式(需要接收并调用)
+	var method=function(){
+		alert("yyy");
+	}
+	method(); 
+	需要穿函数时用到匿名函数
+	fun(function(){},a);
+	*/
+	/* //返回值
+	function method(a,b){
+		return a+b;
+	}
+	alert(method(2,5)); */
+	
+	/* //解析
+	var str="var a=2;var b=3;alert(a+b)";
+	eval(str);//5 */
+	
+	//编码与解码
+	var en="http://www.baidu.com?name=lolo&password=123";
+	var s=encodeURI(en);//解码为 decodeURI()
+	alert(s);
+	var ss=encodeURIComponent(en);//解码为 decodeURICompenent()
+	alert(ss);
+</script>
+</body>
+</html>

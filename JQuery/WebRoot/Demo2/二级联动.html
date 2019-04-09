@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="D:\MyEclipseProfessional2014\JQuery\WebRoot\Demo1\jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	/* $(function(){
+		$("#btn").click(function(){
+		//this.value
+			var v=$("#btn")[0].value;
+			alert(v);
+			
+		});
+	}); */
+	$(function(){
+	
+		var v=new Array(2);
+		v[0]=new Array("a","b","c");
+		v[1]=new Array("aa","bb","cc");
+		v[2]=new Array("aaa","bbb","ccc"); 
+		
+		$("#se").change(function(){
+			$("#ci").empty();
+			var va=this.value;
+			$.each(v,function(i,n){
+				//alert(i);
+				if(i==va){
+					//alert(i+n);
+					$.each(v[i],function(j,m){
+						var text=document.createTextNode(m);
+						var ele=document.createElement("option");
+						$(ele).append(text);
+						$(ele).appendTo($("#ci")); 
+					});
+				}
+			});
+		 	/* $("v").each(function(i){
+			alert("xx");
+				alert(i);
+				  if(i==va){
+					
+				
+					 $("v[i]").each(function(j){
+					
+						/* var text=document.createTextNode(j)
+						var ele=document.createElement("option");
+						$(ele).append(text);
+						$(ele).appendTo($("#ci")); 
+					}); 
+				}  
+			}); */ 
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- <input type="button" value="按钮" id="btn"> -->
+	<select id="se">
+		<option value="0">北京
+		<option value="1">上海
+		<option value="2">南京
+		
+	</select>
+	<select id="ci">
+		
+	</select>
+</body>
+</html>

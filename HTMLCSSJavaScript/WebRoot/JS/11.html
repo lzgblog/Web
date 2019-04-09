@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<span id="span" style=" font-size:200;color:red;margin:200px">5</span>
+</body>
+
+<script type="text/javascript">   
+//设计一个倒计时
+	var timer=5;
+	var set=setInterval(function(){
+		if(timer>=0){ 
+		var second=document.getElementById("span");
+		second.innerHTML=timer--;
+		second.style.color="red";
+		
+		}else{
+			clearInterval(set);
+			var second=document.getElementById("span");
+			//返回上一级目录  ../html/1.html
+			//location.href="9.html";
+			second.innerHTML="加载完毕";
+		}
+		
+	}, 1000);
+	
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<select id="city" >
+		<option value="nan">南宁</option>
+		<option value="yu">玉林</option>
+		<option value="bai">百色</option>
+	</select>
+	<select id="area" >
+		<option>青秀</option>
+		<option>江南</option>
+		<option>西乡塘</option>
+	</select>
+
+</body>
+
+<script type="text/javascript">
+
+	var c=document.getElementById("city");
+	//onchange事件   当发生改变事件时执行函数
+	c.onchange=function(){
+		var val=c.value;
+		switch(val){
+			case "nan":
+				var area=document.getElementById("area");
+				area.innerHTML="<option>青秀</option><option>江南</option><option>西乡塘</option>";
+			break;
+			case "yu":
+				var area=document.getElementById("area");
+				area.innerHTML="<option>博白</option><option>北流</option><option>陆川</option>";
+			break;
+			case "bai":
+				var area=document.getElementById("area");
+				area.innerHTML="<option>靖西</option><option>乐业</option><option>平果</option>";
+			break;
+			default:
+			alert("error");
+		}
+	}
+</script>
+</html>

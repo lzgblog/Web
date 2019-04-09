@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:cxf="http://cxf.apache.org/core"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+				            http://www.springframework.org/schema/beans/spring-beans.xsd
+				            http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+				            http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+				            http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+		<!-- jaxws:endpoint 发布soap服务 -->
+		<!-- <jaxws:endpoint address="/weather" implementor="实现类全限定名称"></jaxws:endpoint> -->
+		<!-- <jaxws:server发布SOAP协议的服务 ，对JaxWsServerFactoryBean类封装-->
+		<jaxws:server address="/weather" serviceClass="com.cxf.weathde.WeatherServiceInterface">
+			<jaxws:serviceBean>
+				<ref bean="weather"/>
+			</jaxws:serviceBean>
+			
+			<!-- 拦截器配置 -->
+			<!-- <jaxws:inInterceptors>
+				<ref bean="in"/>
+			</jaxws:inInterceptors>
+			<jaxws:outInterceptors>
+				<ref bean="out"/>
+			</jaxws:outInterceptors> -->
+		</jaxws:server>
+		<!-- <bean class="org.apache.cxf.interceptor.LoggingInInterceptor" id="in"></bean>
+		<bean class="org.apache.cxf.interceptor.LoggingInInterceptor" id="out"></bean> -->
+		
+		
+		<!-- 服务实现类 -->
+		<bean class="com.cxf.weathde.WeatherServiceInterfaceImpl" id="weather"></bean>
+</beans>

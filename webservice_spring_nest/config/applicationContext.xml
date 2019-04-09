@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:cxf="http://cxf.apache.org/core"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+				            http://www.springframework.org/schema/beans/spring-beans.xsd
+				            http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+				            http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+				            http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+	<!-- <jaxrs:server发布REST的服务 ，对JAXRSServerFactoryBean类封装-->	
+	<jaxrs:server address="/user">
+		<jaxrs:serviceBeans>
+			<ref bean="student"/>
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+	<bean class="com.nest.student.StudentInterfaceImpl" id="student"></bean>
+	<!-- 查询方式 ：http://127.0.0.1/webservice_spring_nest/rs/user?_wadl -->
+	<!-- 单人查询：http://127.0.0.1/webservice_spring_nest/rs/user/student/query/100 -->
+	<!-- 多人查询 ：http://127.0.0.1/webservice_spring_nest/rs/user/student/queryList/110?_type=json -->
+</beans>

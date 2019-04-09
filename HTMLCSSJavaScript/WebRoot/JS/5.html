@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 这种绑定方式要把事件放在前面  否则没有反应 -->
+<!-- <input id="btn" type="button" value="button"/>
+
+	<script type="text/javascript">
+				var btn = document.getElementById("btn");
+				btn.onclick = function(){
+					alert("zzz");
+				};
+			</script>	 -->	
+
+
+<select id="city">
+				<option value="bj">北京</option>
+				<option value="tj">天津</option>
+				<option value="sh">上海</option>
+			</select>
+			<select id="area">
+				<option>海淀</option>
+				<option>朝阳</option>
+				<option>东城</option>
+			</select>
+			<script type="text/javascript">
+				var select = document.getElementById("city");
+				select.onchange = function(){
+					var optionVal = select.value;
+					switch(optionVal){
+						case 'bj':
+							var area = document.getElementById("area");
+							area.innerHTML = "<option>海淀</option><option>朝阳</option><option>东城</option>";
+							break;
+						case 'tj':
+							var area = document.getElementById("area");
+							area.innerHTML = "<option>南开</option><option>西青</option><option>河西</option>";
+							break;
+						case 'sh':
+							var area = document.getElementById("area");
+							area.innerHTML = "<option>浦东</option><option>杨浦</option>";
+							break;
+						default:
+							alert("error");
+					}
+				};				
+				
+			</script>
+</body>
+</html>

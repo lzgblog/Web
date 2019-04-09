@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	//js的bom  windou对象
+	//alert  提示框 无返回值
+	//alert("xxxx");
+	
+	//confirm  确认框   有返回值    返回true or  false
+	/* var res=confirm("是否确认卸载");
+	alert(res); */
+	//直接加载页面
+	window.onload=function(){
+		if(confirm("是否卸载")){
+			alert("卸载成功！");
+		}else{
+			alert("卸载失败！");
+		}
+	}
+	
+	//prompt  提示输入文本框  有返回值   值为输入的值
+	/* var res=prompt("请输入密码");
+	alert(res); */
+ 	
+	 /* prompt("请输入密码", "123")  */
+</script>
+</html>

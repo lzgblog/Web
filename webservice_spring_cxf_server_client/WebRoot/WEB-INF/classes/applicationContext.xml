@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:cxf="http://cxf.apache.org/core"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+				            http://www.springframework.org/schema/beans/spring-beans.xsd
+				            http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+				            http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+				            http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+	<!-- <jaxws:server发布服务-->	
+		<jaxws:server address="/mobile" serviceClass="com.spring.cxf.server.mobile.MobileInterface">
+			<jaxws:serviceBean>
+				<ref bean="MobileInterfaceImpl"/>
+			</jaxws:serviceBean>
+		</jaxws:server>
+		<!-- 服务实现类   实现类里需要注入公网属性 -->
+		<bean class="com.spring.cxf.server.mobile.MobileInterfaceImpl" id="MobileInterfaceImpl">
+			<property name="mobileCodeWSSoap" ref="MobileCodeWS"></property>
+		</bean>
+	<!-- jaxws:client 客户端 -->
+	<jaxws:client id="MobileCodeWS" address="http://ws.webxml.com.cn/WebServices/MobileCodeWS.asmx" serviceClass="com.mobile.MobileCodeWSSoap"></jaxws:client>
+</beans>

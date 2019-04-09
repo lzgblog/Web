@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#clear{clear:both;}
+	#top_left{
+		float: left;
+		margin:0 80;
+	}
+	#top_right{
+		float: right;
+		margin:10 100 0 0;
+		font-size:12;
+	}
+	#top_right a{
+		text-decoration: none;
+	}
+	#top_right a:HOVER{
+		color: red;
+	}
+	#title{
+		background-color: #1C3F09;
+		height:35;
+		padding:10 0;
+		text-align:center;
+		border-top-width:5;
+		border-top-color: green;
+		border-top-style: solid;
+	}
+	#title a{
+		color:#fff;
+		text-decoration: none;
+		
+	}
+	#title a:HOVER {
+		color:fuchsia;
+}
+	#search{
+		text-align:right; 
+		background-color: #B6B684
+	}
+	#s{
+		margin:0 50 0 0;
+	}
+	input[type='image']{
+		margin-left: 20 20;
+	}
+	input[type='text']{
+		height:18;
+	}
+
+</style>
+
+</head>
+<body>
+	<div>
+		<div id="top">
+			<div id="top_left">
+				<img src="img/logo.png">
+			</div>
+			<div id="top_right">
+				<img src="img/cart.gif">
+				<a href="#">购物车</a>|
+				<a href="#">帮助中心</a>|
+				<a href="#">我的账户</a>|
+				<a href="#">新用户注册</a>
+			</div>
+		</div>
+		<div id="clear"></div>
+		<div id="title">
+			<a href="#">文学</a>
+			<a href="#">生活</a>
+			<a href="#">外语</a>
+			<a href="#">计算机</a>
+			<a href="#">学术</a>
+			<a href="#">励志</a>
+		</div>
+		<div id="search">
+		<div id="s">
+			Search
+			<input type="text">
+			<input type="image" src="img/serchbutton.gif">
+		</div>
+		</div>
+	</div>
+</body>
+</html>
