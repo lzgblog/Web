@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!--提供服务需要配置的信息-->
+	<!--提供服务的项目名称-->
+	<dubbo:application name="dubboprovider"></dubbo:application>
+
+	<!--注册地址  zookeeper地址-->
+	<dubbo:registry address="zookeeper://127.0.0.1:2181"></dubbo:registry>
+
+	<!--注册的相关规定  指定通信规则（通信协议？通信端口）-->
+	<dubbo:protocol name="dubbo" port="20880"></dubbo:protocol>
+
+	<!--提供服务的接口 以及它的实现类  ref：向外暴露的服务对象-->
+	<dubbo:service interface="dubbo.ProviderService" ref="providerService"></dubbo:service>
+
+	<!--服务实现类的实例-->
+	<bean class="dubbo.serviceimpl.ProviderServiceImpl" id="providerService"></bean>
+
+	<!--
+		dubbo的其他相关配置：
+			设置服务超时的时间：timeout="3000"  超过3s后报错
+			设置服务的重复次数：retries="3"    重复调用3次
+			设置服务的版本：version="2.0.0"  实现灰度发布
+			设置消费者是否需要检查注册中心：check="false"  默认为true
+		这些设置可以在consumer.xml中的reference中设置，并遵循的原则为：
+			1.精度优先  即精确到方法上时优先 下来是service或reference中，最后是consumer全局配置中
+			2.消费者优先   当在service或refenrence中一起配置时  refenrence中的配置优先
+
+	<dubbo:service interface="com.atguigu.gmall.service.UserService"
+		ref="userServiceImpl02" timeout="1000" version="2.0.0" retries="3">
+		<dubbo:method name="getUserAddressList" timeout="1000"></dubbo:method>
+	</dubbo:service>
+
+	连接监控中心
+	<dubbo:monitor protocol="registry"></dubbo:monitor>
+	-->
+	
+</beans>
